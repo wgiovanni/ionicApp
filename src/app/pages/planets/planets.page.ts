@@ -8,13 +8,15 @@ import { SwapiService } from 'src/app/servcices/swapi.service';
 })
 export class PlanetsPage implements OnInit {
   planets:any;
+  iconname = 'planet';
   constructor(private swapiService:SwapiService) { }
 
   ngOnInit() {
-    this.swapiService.getSwapi('planets').subscribe(data => {
-      this.planets = data;
-      console.log(data);
-    })
+    this.planets = this.swapiService.getSwapi('planets')
+    // this.swapiService.getSwapi('planets').subscribe(data => {
+    //   this.planets = data;
+    //   console.log(data);
+    // })
   }
 
 }

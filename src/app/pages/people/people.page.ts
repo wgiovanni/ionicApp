@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwapiService } from 'src/app/servcices/swapi.service';
 
 @Component({
   selector: 'app-people',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./people.page.scss'],
 })
 export class PeoplePage implements OnInit {
-
-  constructor() { }
+  people:any;
+  iconname = 'people';
+  constructor(private swapiService: SwapiService) { }
 
   ngOnInit() {
+    this.people = this.swapiService.getSwapi('people');
   }
 
 }
