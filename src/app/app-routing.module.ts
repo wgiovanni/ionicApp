@@ -7,8 +7,16 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    path: 'planets',
+    loadChildren: () => import('./pages/planets/planets.module').then( m => m.PlanetsPageModule)
+  },
+  {
+    path: 'people',
+    loadChildren: () => import('./pages/people/people.module').then( m => m.PeoplePageModule)
+  },
+  {
+    path: 'starships',
+    loadChildren: () => import('./pages/starships/starships.module').then( m => m.StarshipsPageModule)
   }
 ];
 @NgModule({
